@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:h="http://java.sun.com/jsf/html">
+    <head>
+        <title>TODO supply a title</title>
+    </head>
+    <body>
+        <ui:composition template="/templates/layout-prestations.xhtml">
+            
+            <ui:define name="title">
+                Edition de Prescription
+            </ui:define>
+            
+            <ui:define name="help">
+                Cette page permet au Medecin d'établir une Prescription
+            </ui:define>
+<!--            <ui:define name="sidebar">
+                <p:panelMenu style="width:200px">
+                    <p:submenu label="Prestation">
+                        <p:menuitem url="/pages/prestation/medecine/edit.xhtml" value="Dossier Patient"/>
+                        <p:menuitem url="/pages/prestation/prescription/edit.xhtml" value="Editer Prescription"/>
+                        <p:menuitem url="#" value="Consulter Prescription"/>
+                    </p:submenu>
+                    <p:submenu label="Facture">
+                        <p:menuitem url="#" value="Facturer Prescription"/>
+                    </p:submenu>
+                </p:panelMenu>
+                    
+            </ui:define>-->
+        </ui:composition>
+    </body>
+</html>

@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="/templates/layout-admin.xhtml">
+            <ui:define name="title">
+                Edition de rôle d'utilisateur
+            </ui:define>
+
+            <ui:define name="help">
+                Cette page permet d'ajouter/modifier un rôle d'utilisateur.
+            </ui:define>
+            
+            <ui:define name="links">
+                <h:outputLink value="liste.xhtml">Liste</h:outputLink>
+            </ui:define>
+
+            <ui:define name="content">
+
+                <h:form id="formEdit">
+                    <p:panel id="panel" style="border: 0;">
+                        <h:inputHidden id="id" value="#{roleBean.role.id}"/>
+                        
+                        <p:panelGrid columns="3">
+
+                            <h:outputLabel for="name" value="Nom du rôle"/>
+                            <p:inputText id="name" value="#{roleBean.role.name}" required="true"/>
+                            <p:message for="name"/>
+
+                            <h:outputLabel for="description" value="Description"/>
+                            <p:inputTextarea id="description" value="#{roleBean.role.description}"/>
+                            <p:message for="description"/>
+
+                            <h:outputLabel for="permissions" value="Permissions"/>
+                            <p:selectCheckboxMenu id="permissions" value="#{roleBean.role.permissions}"
+                                                  label="Permissions" filter="true"
+                                                  filterMatchMode="startsWith"
+                                                  converter="omnifaces.SelectItemsConverter">
+                                <f:selectItems var="p" 
+                                               value="#{roleBean.allPermissions}"
+                                               itemValue="#{p}" itemLabel="#{p.defaultWording}"/>
+                            </p:selectCheckboxMenu>
+                            <p:message for="permissions"/>
+
+                            <p:commandButton update="panel" value="Enregistrer" action="#{roleBean.save()}"/>
+                            <p:commandButton value="Annuler" immediate="true" action="#{roleBean.cancel()}"/>
+
+                        </p:panelGrid>
+                    </p:panel>
+                </h:form>
+
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

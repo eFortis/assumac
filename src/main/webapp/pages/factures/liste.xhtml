@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <head>
+        <title>TODO supply a title</title>
+    </head>
+    <body>
+        <ui:composition template="/templates/layout.xhtml">
+            <ui:define name="title">
+                Liste des Ordonnance d' un Patient
+            </ui:define>
+
+            <ui:define name="help">
+                Cette page affiche la liste des Ordonnance d'un Patient.
+            </ui:define>
+
+            <ui:define name="links">
+                <h:outputLink value="edit.xhtml">Nouveau</h:outputLink>
+            </ui:define>
+
+            <ui:define name="content">
+
+                <h:form id="dataForm">
+                    <p:dataTable id="table" value="#{#}" var="p" 
+                                 paginatorAlwaysVisible="false"
+                                 paginator="true" rows="50" 
+                                 >
+                        <p:column sortBy="#{#}">
+                            <f:facet name="header">Date d'Etablissement d'Ordonnance</f:facet>
+                            <h:outputText value="#{#}"/>
+                        </p:column>
+
+                        <p:column>
+                            <f:facet name="header">Opérations</f:facet>
+                            <p:commandLink value="Voir" action="#{#}" update="table"/>
+                            <p:commandLink value="Supprimer" action="#{#}" update="table"/>
+                        </p:column>
+
+                    </p:dataTable>
+                </h:form>
+
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>

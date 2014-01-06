@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <head>
+        <title>TODO supply a title</title>
+    </head>
+    <body>
+        <ui:composition template="/templates/layout-statistique.xhtml">
+            
+            <ui:define name="title">
+                Consulter Statistique
+            </ui:define>
+            
+            <ui:define name="help">
+                Cette page permet d' éditer les statistiques du Prestataire 
+            </ui:define>
+            <ui:define name="content">
+                <p:barChart id="basic" value="#{chartBean.categoryModel}" legendPosition="ne"  
+            title="Statistique Revenue-Dépense" min="0" max="200" style="height:300px"/>
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>

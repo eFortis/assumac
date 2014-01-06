@@ -1,0 +1,133 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>
+            <ui:insert name="title">
+                -- Titre --
+            </ui:insert>
+            - ASSUMA
+        </title>
+        <h:outputStylesheet library="css" name="styles.css"/>
+    </h:head>
+    <h:body>
+        <p:layout fullPage="true">
+
+            <p:layoutUnit position="north" resizable="false" size="70" style="border-width: 0; padding: 0;">
+                <ui:insert name="header">
+                    <div class="ui-widget ui-widget-header">
+                        <!--<ui:remove>-->
+                            <div id="theme-switcher"> 
+                            <ul>
+                                <li>
+                                <h:link>
+                                    Déconnexion
+                                </h:link>
+                            </li>
+                            </ul>
+                            <p:themeSwitcher value="#{selectedTheme}" style="width:165px" effect="fade" id="statefulSwitcher">  
+                                <f:selectItem itemLabel="Changer de Thème" itemValue="" />  
+                                <f:selectItems value="#{sessionBean.themes}" />
+                            </p:themeSwitcher>
+                            <ui:remove>
+                            </ui:remove>
+                        </div>
+                        <!--</ui:remove>-->
+                        <div id="logo">
+                            <h1>ASSUMA</h1>
+                        </div>
+                        <div id="menu">
+                            <h:form id="formMenu">
+                                <ul>
+                                    <li>
+                                        <h:link outcome="/index.xhtml">
+                                            Accueil
+                                        </h:link>
+                                    </li>
+                                    <li>
+                                        <h:link outcome="/pages/admin/index.xhtml">
+                                            Administration
+                                        </h:link>
+                                    </li>
+                                    <li>
+                                        <h:link outcome="/pages/client/index.xhtml">
+                                            Client
+                                        </h:link>
+                                    </li>
+                                    <li>
+                                        <h:link outcome="/pages/prestation/index.xhtml">
+                                            Prestataire
+                                        </h:link>
+                                    </li>
+<!--                                    <li>
+                                        <h:link outcome="/pages/comptabilite/index.xhtml">
+                                            Comptabilité
+                                        </h:link>
+                                    </li>-->
+                                    <li>
+                                        <h:link outcome="/pages/statistique/index.xhtml">
+                                            Statistique
+                                        </h:link>
+                                    </li>
+                                    <li>
+                                        <h:link outcome="/pages/reglage/index.xhtml">
+                                            Reglage
+                                        </h:link>
+                                    </li>
+                                    
+                                    
+                                </ul>
+                            </h:form>
+                        </div>
+
+                        
+
+                        <br class="clear" />
+                    </div>
+                </ui:insert>
+            </p:layoutUnit>
+
+            <p:layoutUnit position="center" style="border-width: 0; padding: 0;">
+                <h1 class="title ui-widget-header ui-corner-all">
+                    <ui:insert name="title">
+                        -- Titre --
+                    </ui:insert>
+                </h1>
+
+                <div id="help">
+                    <ui:insert name="help">
+                    </ui:insert>
+                </div>
+
+                <p:messages id="messages" showDetail="true" autoUpdate="true" closable="true" />
+
+                <div id="links">
+                    <ui:insert name="links">
+                    </ui:insert>
+                </div>
+
+                <ui:insert name="content">
+                </ui:insert>
+            </p:layoutUnit>
+
+            <p:layoutUnit position="west" header="Menu" size="210" 
+                          collapsible="true" resizable="true" style="padding: 0;">
+                <ui:insert name="sidebar">
+                    
+                </ui:insert>
+            </p:layoutUnit>
+
+            <p:layoutUnit position="south" size="50">
+                <ui:insert name="footer">
+                    
+                </ui:insert>
+            </p:layoutUnit>
+
+        </p:layout>
+    </h:body>
+</html>
+

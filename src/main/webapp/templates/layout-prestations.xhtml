@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="/templates/layout.xhtml">
+
+            <ui:define name="sidebar">
+                <p:panelMenu style="width:200px">
+                    <p:submenu label="Patient">
+                        <p:menuitem url="/pages/prestation/medecine/patient/edit.xhtml" value="Mes Patients"/>
+                    </p:submenu>
+                    <p:submenu label="Consultation">
+
+                        <p:menuitem url="#" value="Consulter Patient"/>
+                        <p:menuitem url="#" value="Ajouter Soin"/>
+                    </p:submenu>
+                    <p:submenu label="Prescription">
+                        <p:menuitem url="/pages/prestation/prescription/medicament/edit.xhtml" value="Medicaments"/>
+                        <p:menuitem url="#" value="Analyse Medicale"/>
+                        <p:menuitem url="#" value="prothés Dentaire"/>
+                        <p:menuitem url="#" value="Trithérapie"/>
+                    </p:submenu>
+                    <p:submenu label="Résultat">
+                        <p:menuitem url="#" value="Consulter"/>
+                    </p:submenu>
+                </p:panelMenu>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

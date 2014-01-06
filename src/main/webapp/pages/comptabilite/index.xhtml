@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <head>
+        <title>TODO supply a title</title>
+    </head>
+    <body>
+        <ui:composition template="/templates/layout.xhtml">
+            
+            <ui:define name="title">
+                Consultation de Statistiques
+            </ui:define>
+            
+            <ui:define name="help">
+                Cette page permet de Consulter les Statistiques Divers
+            </ui:define>
+            <ui:define name="links">
+                <!--<h:outputLink value="liste.xhtml">Liste</h:outputLink>-->
+            </ui:define>
+            <ui:define name="sidebar">
+                <p:panelMenu style="width:200px">
+                    <p:submenu label="Provision">
+                        <p:menuitem url="#" value="provision"/>
+                    </p:submenu>
+                    <p:submenu label="Solde">
+                        <p:menuitem url="#" value="solde"/>
+                    </p:submenu>
+                </p:panelMenu>
+                    
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>

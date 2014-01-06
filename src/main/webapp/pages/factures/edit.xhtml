@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <head>
+        <title>TODO supply a title</title>
+    </head>
+    <body>
+        <ui:composition template="/templates/layout.xhtml">
+            
+            <ui:define name="title">
+                Edition de Facture
+            </ui:define>
+            
+            <ui:define name="help">
+                Cette page permet d'établir une Facture
+            </ui:define>
+            <ui:define name="links">
+                <h:outputLink value="liste.xhtml">Liste</h:outputLink>
+            </ui:define>
+            <ui:define name="sidebar">
+                <p:menu>
+                    <p:submenu label="Factures">
+                        <p:menuitem url="/pages/factures/liste.xhtml" value="Facturer Medicament"/>
+                        <p:menuitem url="/pages/factures/liste.xhtml" value="Facturer Analyse"/>
+                        
+                    </p:submenu>
+                </p:menu>
+            </ui:define>
+            <ui:define name="content">
+                <h:form id="form">
+                    <h:form id="formEdit">
+                    <h:outputText value="Recherche du Dossier Médical"/><br/>
+                    <p:panel id="panel" style="border: 1px;">
+                        <p:panelGrid columns="3">
+                        <h:outputLabel for="patient" value="Matricule du Patient"/>
+                        <p:inputText id="patient" value="#{factureBean.patient.matricule}"  required="false" size="40"/>
+                        <p:message for="patient"/>
+                        
+                        <h:outputLabel for="prestataire" value="Raison Social Prestataire"/>
+                        <ui:remove>
+                           <p:inputText id="prestataire" value="#{factureBean.prestataire.raisonSociale}" required="false" size="40"/> 
+                        </ui:remove>
+                        <p:autoComplete id="prestataire" value="#{factureBean.prestataire.raisonSociale}"   
+                                        completeMethod="#{factureBean.getRaisonSociales()}" effect="fade"
+                                        size="40"/>
+                        <p:message for="prestataire"/>
+                        
+                        <p:commandButton update="panel" value="Valider" action="#{factureBean.getDossiersPatients()}"/>
+                        <p:commandButton value="Annuler" immediate="true" action="#{factureBean.cancel()}"/>
+                        </p:panelGrid>
+                    </p:panel>   
+                </h:form>
+                <h:form id="dataForm">
+                    <p:panel id="panel" style="border: 1px;">
+                        <p:dataTable id="table" value="#{factureBean.dossiers}" var="d" 
+                                 paginatorAlwaysVisible="false"
+                                 paginator="true" rows="50" 
+                                 >
+                        <p:column sortBy="#{d.dateCreation}">
+                            <f:facet name="header">Date d'Etablissement d'Ordonnance</f:facet>
+                            <h:outputText value="#{d.dateCreation}"/>
+                        </p:column>
+
+                        <p:column>
+                            <f:facet name="header">Opérations</f:facet>
+                            <p:commandLink value="Voir" action="#{#}" update="table"/>
+                            <p:commandLink value="Supprimer" action="#{#}" update="table"/>
+                        </p:column>
+
+                    </p:dataTable>
+                    </p:panel>
+                    
+                </h:form>
+                </h:form>
+                
+                
+            </ui:define>  
+        </ui:composition>
+    </body>
+</html>

@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="/templates/layout-admin.xhtml">
+            <ui:define name="title">
+                Edition d'utilisateur
+            </ui:define>
+            
+            <ui:define name="links">
+                <h:outputLink value="liste.xhtml">Liste</h:outputLink>
+            </ui:define>
+
+            <ui:define name="help">
+                Cette page permet d'ajouter/modifier un utilisateur.
+            </ui:define>
+
+            <ui:define name="content">
+
+                <h:form>
+                    <p:panel id="panel" style="border: 0;">
+                        <h:inputHidden id="id" value="#{userBean.user.id}"/>
+                        
+                        <p:panelGrid columns="3">
+
+                            <h:outputLabel for="username" value="Nom d'utilisateur"/>
+                            <p:inputText id="username" value="#{userBean.user.username}" required="true"/>
+                            <p:message for="username"/>
+
+                            <h:outputLabel for="password" value="Mot de passe"/>
+                            <h:inputSecret id="password" value="#{userBean.user.password}" required="true"/>
+                            <p:message for="password"/>
+
+                            <h:outputLabel for="password2" value="Confirmer le mot de passe"/>
+                            <h:inputSecret id="password2" value="#{userBean.user.password}" required="true"/>
+                            <p:message for="password2"/>
+
+                            <h:outputLabel for="enabled" value="Actif"/>
+                            <p:selectBooleanCheckbox id="enabled" value="#{userBean.user.enabled}"/>
+                            <p:message for="enabled"/>
+
+                            <h:outputLabel for="roles" value="Rôles"/>
+                            
+                                <p:selectCheckboxMenu id="roles" value="#{userBean.user.roles}"
+                                                  label="Rôles" filter="true"
+                                                  filterMatchMode="startsWith"
+                                                  converter="omnifaces.SelectItemsConverter">
+                                    <f:selectItems var="r" itemValue="#{r}" itemLabel="#{r.name}" value="#{userBean.allRoles}"/>
+                            </p:selectCheckboxMenu>
+                                <p:message for="roles"/>
+                            <ui:remove>
+                            </ui:remove>
+                            
+                            
+
+                            <p:commandButton update="panel" value="Enregistrer" action="#{userBean.save()}"/>
+                            <p:commandButton value="Annuler" immediate="true" action="#{userBean.cancel()}"/>
+
+                        </p:panelGrid>
+                    </p:panel>
+                </h:form>
+
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

@@ -1,0 +1,40 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="/templates/layout.xhtml">
+
+            <ui:define name="sidebar">
+                <p:panelMenu style="width:200px">
+                    <p:submenu label="Configuration">
+                        <p:menuitem url="/pages/admin/user/liste.xhtml" value="Utilisateurs"/>
+                        <p:menuitem url="/pages/admin/role/edit.xhtml" value="Rôles"/>
+                        <p:menuitem url="#" value="Droits"/>
+                        <p:menuitem url="#" value="Profile"/>
+                    </p:submenu>
+                    <p:submenu label="Prestataire">
+                        <p:menuitem url="#" value="Créer prestataire"/>
+                        <p:menuitem url="#" value="Créer type prestataire"/>
+                    </p:submenu>
+                    <p:submenu label="Client">
+                        <p:menuitem url="#" value="Créer Societé"/>
+                    </p:submenu>
+                    <p:submenu label="Assurence">
+                        <p:menuitem url="#" value="Compagnie Assurence"/>
+                        <p:menuitem url="#" value="Police"/>
+                        <p:menuitem url="#" value="Type de Police"/>
+                    </p:submenu>
+                </p:panelMenu>
+                
+            </ui:define>
+
+        </ui:composition>
+    </h:body>
+</html>
+
