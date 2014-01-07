@@ -14,8 +14,36 @@
             </ui:define>
             
             <ui:define name="help">
+                Bienvenue dans ASSUMA...
+            </ui:define>
+            <ui:define name="maincontainer">
                 Bienvenue dans ASSUMA.
             </ui:define>
+            <div id="main_pane_left">                           
+                <div class="homeClass">
+                    <img src="../../resources/images/theme/dot.gif" title="Client" alt="Client" class="icon ic_s_new" />
+                    <h:outputLink value="edit.xhtml">Administration</h:outputLink>
+                </div>
+                
+                <div class="homeClient">
+                    <img src="../../resources/images/theme/dot.gif" title="Client" alt="Client" class="icon ic_s_new" />
+                    <h:outputLink value="edit.xhtml">Client</h:outputLink>
+                </div>
+            </div>
+            
+            <div id="main_pane_right">                
+            
+                <div class="homePrestataire">
+                    <img src="../../resources/images/theme/dot.gif" title="Client" alt="Client" class="icon ic_s_new" />
+                    <h:outputLink value="edit.xhtml">Prestataire</h:outputLink>
+                </div>
+
+                <div class="homeStatistiques">
+                    <img src="../../resources/images/theme/dot.gif" title="Client" alt="Client" class="icon ic_s_new" />
+                    <h:outputLink value="edit.xhtml">Statistiques</h:outputLink>
+                </div>
+            </div>
+            
             
         </ui:composition>
     </h:body>

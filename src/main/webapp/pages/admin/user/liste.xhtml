@@ -19,36 +19,42 @@
             </ui:define>
             
             <ui:define name="links">
-                <h:outputLink value="edit.xhtml">Nouveau</h:outputLink>
+                <div class="news">                    
+                    <img src="../../resources/images/theme/dot.gif" title="Nouveau" alt="Nouveau" class="icon ic_s_new" />
+                    <h:outputLink value="edit.xhtml">Créer</h:outputLink>
+                </div>
             </ui:define>
             
             <ui:define name="content">
+                <div class="userTable">                    
+                    <h:form id="dataForm">
+                        <p:dataTable id="table" value="#{userBean.list}" var="p">
+                            <p:column>
+                                <f:facet name="header">Nom d'utilisateur</f:facet>
+                                <h:outputText value="#{p.username}"/>
+                            </p:column>
 
-                <h:form id="dataForm">
-                    <p:dataTable id="table" value="#{userBean.list}" var="p">
-                        <p:column>
-                            <f:facet name="header">Nom d'utilisateur</f:facet>
-                            <h:outputText value="#{p.username}"/>
-                        </p:column>
+                            <p:column>
+                                <f:facet name="header">Actif</f:facet>
+                                <h:outputText value="#{p.enabled}"/>
+                            </p:column>
 
-                        <p:column>
-                            <f:facet name="header">Actif</f:facet>
-                            <h:outputText value="#{p.enabled}"/>
-                        </p:column>
+                            <p:column>
+                                <f:facet name="header">Rôles</f:facet>
+                                <h:outputText value="#{p.rolesString}"/>
+                            </p:column>
 
-                        <p:column>
-                            <f:facet name="header">Rôles</f:facet>
-                            <h:outputText value="#{p.rolesString}"/>
-                        </p:column>
-                        
-                        <p:column>
-                            <f:facet name="header">Opérations</f:facet>
-                            <p:commandLink value="Supprimer" action="#{userBean.delete(p.id)}" 
-                                           update="table"/>
-                        </p:column>
+                            <p:column>
+                                <f:facet name="header">Opérations</f:facet>
+                                <img src="../../resources/images/theme/dot.gif" title="Nouveau" alt="Nouveau" class="icon ic_s_del" />
+                                <p:commandLink value="Supprimer" action="#{userBean.delete(p.id)}" 
+                                               update="table"/>
+                            </p:column>
 
-                    </p:dataTable>
-                </h:form>
+                        </p:dataTable>
+                    </h:form>
+                </div> 
+                
 
             </ui:define>
         </ui:composition>

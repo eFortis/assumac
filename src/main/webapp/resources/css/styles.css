@@ -11,10 +11,6 @@
 #header-right {
     float: right;
 }
-#menu {
-    float: right;
-    margin-top: 10px;
-}
 #theme-switcher {
     float: right;
     margin-top: 10px;
@@ -30,7 +26,7 @@
     text-decoration: none;
 }
 #theme-switcher ul li a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 .clear {
     clear: both;
@@ -54,7 +50,7 @@
     text-decoration: none;
 }
 #menu ul li a:hover {
-    text-decoration: underline;
+    text-decoration: none;
 }
 
 .ui-widget, .ui-widget .ui-widget {
@@ -71,6 +67,192 @@ h1 {
     margin-top: 100px;
 }
 
+/*Custom*/
+
+/* Thèmes */
+
 .ui-state-default a, .ui-state-default a:link, .ui-state-default a:visited {
-color: #6C1449 !important;
+    color: #6C1449 !important;
 }
+
+.ui-state-active, .ui-widget-content .ui-state-active, .ui-widget-header .ui-state-active {
+    border: 1px solid #2694e8;
+    background: #3676ce url("/assurence/javax.faces.resource/images/ui-bg_glass_50_3baae3_1x400.png") 50% 50% repeat-x;
+/*    font-weight: bold;
+    color: #ffffff;*/
+}
+.ui-widget-header {
+    border: 1px solid #aed0ea;
+    background: #3676ce url("/assurence/javax.faces.resource/images/ui-bg_highlight-soft_100_deedf7_1x100.png") 50% 50% repeat-x;
+    color: #ffffff;
+    font-weight: normal;
+    padding-top: .2%;
+    padding-left:1%;
+}
+
+.ui-widget-header a {
+    color: #ffffff;
+}
+
+/****/
+
+/*logo*/
+#logo {
+    background-image:url('../resources/images/logo.png');
+    background-repeat: no-repeat !important;
+    display:block;
+    float: left;
+    height:50px;
+    text-indent:-9999px;
+    width:200px;
+    margin-left:5%
+}
+/**/
+
+
+.icon {
+    margin: 0 .3em;
+    padding: 0 !important;
+    width: 16px;
+    height: 16px;
+    background-image: url('../resources/images/theme/sprites.png') !important;
+    background-repeat: no-repeat !important;
+    background-position: top left !important;
+}
+
+/* Icons Positions */
+.ic_s_new {
+background-position: 0 -1136px !important;
+}
+.ic_s_del {
+background-position: 0 -1840px !important;
+}
+.ic_s_home {
+background-position: 0 -672px !important;
+}
+.ic_s_prest {
+background-image: url('../resources/images/doctor_16.png') !important;
+}
+.ic_s_stats {
+background-position: 0 -80px !important;
+}
+.ic_s_admin {
+background-position: 0 -1280px !important;
+}
+.ic_s_help {
+background-position: 0 -1312px !important;
+}
+.ic_s_about {
+background-position: 0 -1776px !important;
+}
+.ic_s_logout {
+background-position: 0 -1984px !important;
+}
+.ic_s_profil {
+background-image: url('../resources/images/user.png') !important;
+}
+.ic_s_users {
+background-position: 0 -1440px !important;
+}
+.ic_s_rights {
+background-image: url('../resources/images/user-permissions.png') !important;
+}
+.ic_s_roles {
+background-image: url('../resources/images/user-roles.png') !important;
+}
+
+.ic_s_users .ui-menuitem-text,.ic_s_rights .ui-menuitem-text,
+.ic_s_roles .ui-menuitem-text,.ic_s_profiles .ui-menuitem-text {
+    margin-left: 15%
+}
+/***/
+
+#menu  {
+/*    margin-right: 18%;*/
+    float: left;
+    margin-top: 10px;
+/*    height: 50px;*/
+}
+
+#menu img {
+    margin-right: .5em;
+    vertical-align: -3px;
+}
+#menu ul li {
+    border-right: 1px solid #fff !important;
+    border-left: 1px solid #ccc !important;
+}
+#menu ul li a{
+    padding: .6em !important;
+}
+#menu ul li a {
+    text-shadow: 0 1px 0 #222 !important;
+}
+
+#theme-switcher .logout{
+    font-family: sans-serif;
+    color: #444;
+    font-size: 82%;
+}
+
+/* Layout Container */
+.ui-layout-unit-content.ui-widget-content{
+    
+}
+.ui-layout-container{
+    padding-left: 1%;
+    padding-right: 1%
+}
+/***/
+
+h1{font-family: sans-serif}
+
+#help{
+    padding: 2%
+}
+.news{ 
+    border: 1px solid #999;
+    background: #f3f3f3;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -moz-box-shadow: 2px 2px 5px #ccc;
+    -webkit-box-shadow: 2px 2px 5px #ccc;
+    box-shadow: 2px 2px 5px #ccc;
+    margin-bottom: 1em;
+    padding-bottom: 1em;
+    text-align: center;
+  width: 70px;
+  height: 10px
+
+}
+.news a{
+    margin: 1% 1% auto;
+    text-decoration: none;
+    font-size: 85%
+}
+ .news img{
+     position: relative;
+    top: 15%;
+}
+
+.userTable table{ width: 30%}
+
+/*#dataForm:table:j_idt50{
+    text-align: center;
+    color: #000
+}*/
+a#j_idt59{display:none}
+
+#main_pane_left {
+    width: 50%;
+    float: left;
+    padding-top: 1em;
+    display: block;
+}
+#main_pane_right {
+margin-left: 50%;
+padding-top: 1em;
+padding-left: 1em;
+}
+
